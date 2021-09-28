@@ -25,3 +25,15 @@ body, a:link, a:visited, a:active{
   border-radius:10px;
   position:absolute;
 }
+
+.zangiefDancer{
+  border:10px solid yellow;
+  border-radius:10px;
+  position:absolute;
+}
+
+.popDancer{
+  border:10px solid teal;
+  border-radius:10px;
+  position:absolute;
+}
