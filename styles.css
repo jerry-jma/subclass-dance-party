@@ -3,7 +3,7 @@ body, html{
 }
 body{
   margin: 0px;
-  background-color:#444;
+  background-image: url(img/Field.jpg);
   font-size: 18px;
 }
 body, a:link, a:visited, a:active{
@@ -27,13 +27,28 @@ body, a:link, a:visited, a:active{
 }
 
 .zangiefDancer{
-  border:10px solid yellow;
-  border-radius:10px;
+  /*
+  background-image: url(img/ZangiefImage.png);
+  background-repeat: no-repeat;
+  */
+  height: 80px;
+  width: 50px;
   position:absolute;
 }
 
 .popDancer{
-  border:10px solid teal;
-  border-radius:10px;
+  /* /* border:10px solid teal; */
+  border-radius:50%;
+  height:33px;
+  width: 33px;
   position:absolute;
 }
+
+
+.mirror {
+  -moz-transform: scale(-1, -1);
+  -webkit-transform: scale(-1, -1);
+  transform: scale(-1, -1);
+}
+
+

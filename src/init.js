@@ -1,6 +1,13 @@
 $(document).ready(function() {
   window.dancers = [];
-
+  $('.lineUp').on('click', function(event) {
+    var x = 0;
+    var y = $('body').height() / 2;
+    for (var i = 0; i < window.dancers.length; i++) {
+      window.dancers[i].lineup(y, x);
+      x += 100;
+    }
+  });
 
   //Add ZangiefDancer
   $('.addZangiefButton').on('click', function(event) {
@@ -14,9 +21,10 @@ $(document).ready(function() {
     var dancer = new dancerMakerFunction(
       $('body').height() * Math.random(), // top
       $('body').width() * Math.random(), //left
-      Math.random() * 1000 //timeBetweenSteps
+      3000 //timeBetweenSteps
     );
     $('body').append(dancer.$node);
+    window.dancers.push(dancer);
     console.log(window);
   });
 
@@ -33,9 +41,19 @@ $(document).ready(function() {
       $('body').width() * Math.random(), //left
       Math.random() * 1000 //timeBetweenSteps
     );
+
     $('body').append(dancer.$node);
-    console.log(window);
+    window.dancers.push(dancer);
+    //console.log(window);
+    //console.log('window dancers ', window.dancers);
   });
+
+
+
+
+
+
+
   //Lineup
   //iterate through array calling setPosition on each one
 
@@ -67,11 +85,21 @@ $(document).ready(function() {
       Math.random() * 1000 //timeBetweenSteps
     );
     $('body').append(dancer.$node);
+    window.dancers.push(dancer);
     console.log(window);
+
   });
-
-
-
+  /*
+  $('.addDancerButton').mouseover(function() {
+    alert('mouseover Event!');
+    this.css({
+      color: white
+    });
+  });
+*/
+  $('.addDancerButton').mouseover(function() {
+    dancer.changeColor();
+  });
 
 });
 

@@ -43,19 +43,46 @@ var makeDancer = function(top, left, timeBetweenSteps) {
   //debugger;
   this.step();
   this.setPosition(top, left);
+  this.mouseOver();
+
   // return dancer;
+
 };
 
-makeDancer.prototype.lineup = function() {
+makeDancer.prototype.mouseOver = function() {
+  var self = this;
+  this.$node.mouseover(function() {
+  // alert('That\'s a blinkyDancer!');
+    var changeWhite = {
+      border: '10px solid white'
+    };
+    //alert(this);
+    self.$node.css(changeWhite);
+
+  //this.css('color', 'lightgreen');
+  });
+  // alert('mouseover Event!');
+  // $(this).css('visibility', 'visible');
+  //var changeWhite = {
+  //    color: 'white'
+  //  };
+
+  //  this.$node.css(changeWhite);
+
+};
+
+makeDancer.prototype.lineup = function(y, x) {
   //more research
-  //this.setPosition(, );
+  this.setPosition(y, x);
 };
 
 makeDancer.prototype.step = function() {
+
   // the basic dancer doesn't do anything interesting at all on each step,
   //console.log(this.step);
   // it just schedules the next step
   setTimeout(this.step.bind(this), this.timeBetweenSteps);
+
   //setTimeout(function() {
   //  this.step.call(this);
   //}, this.timeBetweenSteps);
